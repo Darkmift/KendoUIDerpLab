@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 var path = require('path');
-var public = path.join(__dirname, 'src/public');
+var public = path.join(__dirname, 'dist');
 
 
 
