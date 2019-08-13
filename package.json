@@ -1,0 +1,23 @@
+{
+  "name": "kendouiderplab",
+  "version": "1.0.0",
+  "description": "derping npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darkmift/KendoUIDerpLab.git"
+  },
+  "author": "AEK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Darkmift/KendoUIDerpLab/issues"
+  },
+  "homepage": "https://github.com/Darkmift/KendoUIDerpLab#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "kendo-ui-core": "^2019.2.807"
+  }
+}
