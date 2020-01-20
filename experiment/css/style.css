@@ -1,0 +1,13 @@
+body{
+  background-color: rgb(202, 143, 143);
+}
+
+* {
+  font-family: 'Tahoma';
+}
+
+#splitter {
+  height: 90vh;
+  min-height: 600px;
+  background-color: rgb(224, 233, 229);
+}

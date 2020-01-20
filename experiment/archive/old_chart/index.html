@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="http://demos.telerik.com/kendo-ui/bar-charts/date-axis">
+    <style>
+        html {
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.dataviz.default.min.css" />
+
+    <script src="http://cdn.kendostatic.com/2014.3.1119/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2014.3.1119/js/kendo.all.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="chart"></div>
+
+    <script>
+        const days = ["Sun 08/11/19", "Mon 08/12/19", "Tue 08/13/19", "Wed 08/14/19", "Thu 08/15/19", "Fri 08/16/19",
+            "Sat 08/17/19",
+            "Sun 08/18/19", "Mon 08/19/19", "Tue 08/20/19", "Wed 08/21/19", "Thu 08/22/19", "Fri 08/23/19", "Sat 08/24/19"
+        ];
+        const PM = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
+        const AM = [8615, 1236, 8794, 2855, 2731, 9842, 2719, 5048, 97, 5392, 7866, 290, 8166, 4048];
+
+        const AllLength = AM.length + PM.length;
+        const AmPm = [];
+
+        for (let i = 0; i < AllLength; i++) {
+            i % 2 ? AmPm.push('PM') : AmPm.push('AM');
+
+        }
+
+        $("#chart").kendoChart({
+            title: {
+                text: "Chart Graph title"
+            },
+            legend: {
+                position: "bottom"
+            },
+            series: [{
+                categoryAxis: 'days',
+                name: "AM",
+                data: AM
+            }, {
+                categoryAxis: 'AmPm',
+                name: "PM",
+                data: PM
+            }],
+            valueAxis: {
+                labels: {
+                    format: "{0}$"
+                },
+                line: {
+                    visible: false
+                },
+                axisCrossingValue: 0
+            },
+            categoryAxis: [{
+                labels: {
+                    color: 'white',
+                },
+                name: 'AmPm',
+                baseUnit: 'days',
+                background: '#B4A5A2',
+                justified: true,
+                categories: AmPm
+            }, {
+                labels: {
+                    background: 'green',
+                    color: 'white',
+                },
+                name: 'days',
+                baseUnit: 'days',
+                justified: true,
+                categories: days,
+            }, ],
+            tooltip: {
+                visible: true,
+                format: "{0}%",
+                template: "#= series.name #: #= value #"
+            }
+        });
+    </script>
+</body>
+
+</html>
