@@ -14,7 +14,7 @@ $(document).ready(function() {
 	});
 
 	$('#chart').kendoChart({
-		tooltip: { visible: true },
+		tooltip: { visible: true, template: "Volume: #= kendo.format('{0:n}',value) #" },
 		legend: { position: 'bottom' },
 		series: [
 			{
